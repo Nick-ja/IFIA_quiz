@@ -1,0 +1,879 @@
+WindowManager:
+    MainMenu:
+    Section1:
+    Section2:
+    Section3:
+    Section4:
+    Section5:
+    Section6:
+    Section7:
+    Section8:
+    Section9:
+    Section10:
+
+<MainButton@Button>
+    font_size: 28
+    text_size: root.width, None
+    halign: "left"
+    size_hint: .7, .8
+    pos_hint: {"center_x": 0.5}
+
+<AnswerLabel@Label>
+    font_size: 18
+    text_size: root.width, None
+    halign: "left"
+
+
+<MainMenu>:
+    canvas:
+        Color:
+            rgba: 0,0.0157,0.6196,1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    name: "Main"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        spacing: 1
+
+        Label:
+            text: "Choose a section to practice"
+            font_size: 32
+
+        MainButton:
+            text: "Section 1: Calculations"
+            on_release:
+                app.root.current = "S1"
+                root.manager.transition.direction = "left"
+            background_color: 0,0,0,1
+
+        MainButton:
+            text: "Section 2: Definitions"
+            on_release:
+                app.root.current = "S2"
+                root.manager.transition.direction = "left"
+            background_color: 0,0,0,1
+
+        MainButton:
+            text: "Section 3: Loss Control"
+            on_release:
+                app.root.current = "S3"
+                root.manager.transition.direction = "left"
+            background_color: 0,0,0,1
+
+        MainButton:
+            text: "Section 4: Marine Measurement"
+            on_release:
+                app.root.current = "S4"
+                root.manager.transition.direction = "left"
+            background_color: 0,0,0,1
+
+        MainButton:
+            text: "Section 5: Safety"
+            on_release:
+                app.root.current = "S5"
+                root.manager.transition.direction = "left"
+            background_color: 0,0,0,1
+
+        MainButton:
+            text: "Section 6: Sampling"
+            on_release:
+                app.root.current = "S6"
+                root.manager.transition.direction = "left"
+            background_color: 0,0,0,1
+
+        MainButton:
+            text: "Section 7: Tank Gauging"
+            on_release:
+                app.root.current = "S7"
+                root.manager.transition.direction = "left"
+            background_color: 0,0,0,1
+
+        MainButton:
+            text: "Section 8: Temperature Determination"
+            on_release:
+                app.root.current = "S8"
+                root.manager.transition.direction = "left"
+            background_color: 0,0,0,1
+
+        MainButton:
+            text: "Section 9: Metering"
+            on_release:
+                app.root.current = "S9"
+                root.manager.transition.direction = "left"
+            background_color: 0,0,0,1
+
+        MainButton:
+            text: "Section 10: Ethics"
+            on_release:
+                app.root.current = "S10"
+                root.manager.transition.direction = "left"
+            background_color: 0,0,0,1
+
+        MainButton:
+            text: "Quit"
+            halign: "center"
+            color: (1,0,0,1)
+            on_release: app.stop()
+            background_color: 0,0,0,1
+        
+        Label:
+            text: "© NICK JACOBS"
+            font_size: 32
+            color: (0,1,0,1)
+        BoxLayout
+
+
+<Section1>:
+
+    name: "S1"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "left"
+            font_size: 28
+
+        GridLayout:
+            id: grid
+            cols: 2
+
+            AnswerLabel:
+                id: LabelA
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "a")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelB
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "b")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelC
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "c")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelD
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "d")
+                color: .90,.90,.90,5
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Main Menu"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+                    app.root.current = "Main"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                id: Next
+                text: "Next question"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_press: root.next_click()
+
+<Section2>:
+    name: "S2"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "left"
+            font_size: 28
+
+        GridLayout:
+            id: grid
+            cols: 2
+
+            AnswerLabel:
+                id: LabelA
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "a")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelB
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "b")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelC
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "c")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelD
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "d")
+                color: .90,.90,.90,5
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Main Menu"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+                    app.root.current = "Main"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                id: Next
+                text: "Next question"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_press: root.next_click()
+
+<Section3>:
+    name: "S3"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "left"
+            font_size: 28
+
+        GridLayout:
+            id: grid
+            cols: 2
+
+            AnswerLabel:
+                id: LabelA
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "a")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelB
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "b")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelC
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "c")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelD
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "d")
+                color: .90,.90,.90,5
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Main Menu"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+                    app.root.current = "Main"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                id: Next
+                text: "Next question"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_press: root.next_click()
+
+<Section4>:
+    name: "S4"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "left"
+            font_size: 28
+
+        GridLayout:
+            id: grid
+            cols: 2
+
+            AnswerLabel:
+                id: LabelA
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "a")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelB
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "b")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelC
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "c")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelD
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "d")
+                color: .90,.90,.90,5
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Main Menu"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+                    app.root.current = "Main"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                id: Next
+                text: "Next question"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_press: root.next_click()
+
+<Section5>:
+    name: "S5"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "left"
+            font_size: 28
+
+        GridLayout:
+            id: grid
+            cols: 2
+
+            AnswerLabel:
+                id: LabelA
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "a")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelB
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "b")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelC
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "c")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelD
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "d")
+                color: .90,.90,.90,5
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Main Menu"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+                    app.root.current = "Main"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                id: Next
+                text: "Next question"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_press: root.next_click()
+
+<Section6>:
+    name: "S6"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "left"
+            font_size: 28
+
+        GridLayout:
+            id: grid
+            cols: 2
+
+            AnswerLabel:
+                id: LabelA
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "a")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelB
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "b")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelC
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "c")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelD
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "d")
+                color: .90,.90,.90,5
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Main Menu"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+                    app.root.current = "Main"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                id: Next
+                text: "Next question"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_press: root.next_click()
+
+<Section7>:
+    name: "S7"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "left"
+            font_size: 28
+
+        GridLayout:
+            id: grid
+            cols: 2
+
+            AnswerLabel:
+                id: LabelA
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "a")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelB
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "b")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelC
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "c")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelD
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "d")
+                color: .90,.90,.90,5
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Main Menu"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+                    app.root.current = "Main"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                id: Next
+                text: "Next question"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_press: root.next_click()
+
+<Section8>:
+    name: "S8"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "left"
+            font_size: 28
+
+        GridLayout:
+            id: grid
+            cols: 2
+
+            AnswerLabel:
+                id: LabelA
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "a")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelB
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "b")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelC
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "c")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelD
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "d")
+                color: .90,.90,.90,5
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Main Menu"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+                    app.root.current = "Main"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                id: Next
+                text: "Next question"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_press: root.next_click()
+
+<Section9>:
+    name: "S9"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "left"
+            font_size: 28
+
+        GridLayout:
+            id: grid
+            cols: 2
+
+            AnswerLabel:
+                id: LabelA
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "a")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelB
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "b")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelC
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "c")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelD
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "d")
+                color: .90,.90,.90,5
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Main Menu"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+                    app.root.current = "Main"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                id: Next
+                text: "Next question"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_press: root.next_click()
+
+<Section10>:
+    name: "S10"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "left"
+            font_size: 28
+
+        GridLayout:
+            id: grid
+            cols: 2
+
+            AnswerLabel:
+                id: LabelA
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "a")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelB
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "b")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelC
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "c")
+                color: .90,.90,.90,5
+
+            AnswerLabel:
+                id: LabelD
+            CheckBox:
+                size_hint: .1, 1
+                group: "answers"
+                on_active: root.checkbox_answer(self, self.active, "d")
+                color: .90,.90,.90,5
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Main Menu"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+                    app.root.current = "Main"
+                    root.manager.transition.direction = "right"
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                id: Next
+                text: "Next question"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_press: root.next_click()

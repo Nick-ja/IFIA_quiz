@@ -1,0 +1,187 @@
+WindowManager:
+    MainMenu:
+    Section1:
+
+
+<MainMenu>:
+    name: "Main"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        spacing: 1
+
+        Label:
+            text: "Choose a section to practice"
+            font_size: 32
+
+        Button:
+            text: "Section 1: Calculations"
+            font_size: 28
+            text_size: self.size
+            halign: 'left'
+            size_hint: .7, .6
+            pos_hint: {"center_x": 0.5}
+            on_release:
+                app.root.current = "S1"
+                root.manager.transition.direction = "left"
+
+        Button:
+            text: "Section 2: Definitions"
+            font_size: 28
+            text_size: self.size
+            halign: 'left'
+            size_hint: .7, .6
+            pos_hint: {"center_x": 0.5}
+            on_release:
+
+        Button:
+            text: "Section 3: Loss Control"
+            font_size: 28
+            text_size: self.size
+            halign: 'left'
+            size_hint: .7, .6
+            pos_hint: {"center_x": 0.5}
+            on_release:
+
+        Button:
+            text: "Section 4: Marine Measurement"
+            font_size: 28
+            text_size: self.size
+            halign: 'left'
+            size_hint: .7, .6
+            pos_hint: {"center_x": 0.5}
+            on_release:
+
+        Button:
+            text: "Section 5: Safety"
+            font_size: 28
+            text_size: self.size
+            halign: 'left'
+            size_hint: .7, .6
+            pos_hint: {"center_x": 0.5}
+            on_release:
+
+        Button:
+            text: "Section 6: Sampling"
+            font_size: 28
+            text_size: self.size
+            halign: 'left'
+            size_hint: .7, .6
+            pos_hint: {"center_x": 0.5}
+            on_release:
+
+        Button:
+            text: "Section 7: Tank Gauging"
+            font_size: 28
+            text_size: self.size
+            halign: 'left'
+            size_hint: .7, .6
+            pos_hint: {"center_x": 0.5}
+            on_release:
+
+        Button:
+            text: "Section 8: Temperature Determination"
+            font_size: 28
+            text_size: self.size
+            halign: 'left'
+            size_hint: .7, .6
+            pos_hint: {"center_x": 0.5}
+            on_release:
+
+        Button:
+            text: "Section 9: Metering"
+            font_size: 28
+            text_size: self.size
+            halign: 'left'
+            size_hint: .7, .6
+            pos_hint: {"center_x": 0.5}
+            on_release:
+
+        Button:
+            text: "Section 10: Ethics"
+            font_size: 28
+            text_size: self.size
+            halign: 'left'
+            size_hint: .7, .6
+            pos_hint: {"center_x": 0.5}
+            on_release:
+
+        BoxLayout:
+
+
+<Section1>:
+    on_enter: root.questions_section_1()
+    name: "S1"
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Label:
+            id: QuestionLabel
+            text: ""
+            text_size: root.width, None
+            halign: "center"
+            font_size: 28
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "A. Answer 1"
+                font_size: 28
+            CheckBox:
+                group: "answers"
+                on_active: root.questions_section_1(self, self.active, "A")
+
+            Label:
+                text: "B. Answer 2"
+                font_size: 28
+            CheckBox:
+                group: "answers"
+                on_active: root.questions_section_1(self, self.active, "B")
+
+            Label:
+                text: "C. Answer 3"
+                font_size: 28
+            CheckBox:
+                group: "answers"
+                on_active: root.questions_section_1(self, self.active, "C")
+
+            Label:
+                text: "D. Answer 4"
+                font_size: 28
+            CheckBox:
+                group: "answers"
+                on_active: root.questions_section_1(self, self.active, "D")
+
+
+        #Button:
+        #    text: "Back to Main Menu"
+        #    font_size: 28
+        #    on_release:
+        #        app.root.current = "Main"
+        #        root.manager.transition.direction = "right"
+
+        BoxLayout:
+
+            orientation: "horizontal"
+            size_hint: 1, 0.3
+
+            Button:
+                text: "Back"
+                size_hint: 0.5, 1
+                font_size: 28
+                on_release:
+
+            Label:
+                id: AmountLabel
+                text: ""
+                font_size: 28
+
+            Button:
+                text: "Next"
+                size_hint: 0.5, 1
+                font_size: 28
+                #on_release: root.questions_section_1()
